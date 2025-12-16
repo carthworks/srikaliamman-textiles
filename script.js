@@ -3,6 +3,8 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
+    initializePageLoader();
+    initializeScrollProgress();
     initializeAOS();
     initializeNavbar();
     initializeDarkMode();
@@ -11,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeSmoothScroll();
     initializeCarousel();
     initializeBackToTop();
+    initializeLightbox();
 });
 
 // ============================================

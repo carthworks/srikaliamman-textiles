@@ -28,9 +28,44 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new-features.css">
 </head>
 
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="brand-icon-large">🧵</span>
+                <h2>Sri Kaliamman Textiles</h2>
+            </div>
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading Premium Textiles...</p>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Product Gallery -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Product image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
     <!-- Dark Mode Toggle -->
     <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
@@ -73,14 +108,29 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="carousel-image" style="background-image:url('images/mats.jpg')"></div>
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-caption-custom">
+                        <h1 class="display-3 fw-bold animate-fade-in">Premium Mats & Napkins</h1>
+                        <p class="lead animate-fade-in-delay">Decorative Excellence for Every Space</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <div class="carousel-image" style="background-image:url('images/bedsheets.jpg')"></div>
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-caption-custom">
+                        <h1 class="display-3 fw-bold animate-fade-in">Luxury Bedsheets & Linens</h1>
+                        <p class="lead animate-fade-in-delay">Crafted with Care from Karur</p>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
                     <div class="carousel-image" style="background-image:url('images/terry.jpg')"></div>
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-caption-custom">
+                        <h1 class="display-3 fw-bold animate-fade-in">Quality Terry Products</h1>
+                        <p class="lead animate-fade-in-delay">Wholesale Solutions Direct from Manufacturer</p>
+                    </div>
                 </div>
             </div>
 
@@ -200,9 +250,13 @@
                 <div class="product-slider" id="productSlider">
                     <!-- Product Card 1 -->
                     <div class="product-card">
-                        <div class="product-image">
+                        <div class="product-image lightbox-trigger" data-image="images/towels.jpg"
+                            data-caption="Premium Quality Terry Towels">
                             <img src="images/towels.jpg" alt="Towels">
                             <div class="product-overlay">
+                                <button class="btn btn-light me-2 lightbox-btn">
+                                    <i class="fas fa-search-plus me-2"></i>View
+                                </button>
                                 <a href="https://wa.me/919876543210?text=I'm%20interested%20in%20Towels"
                                     class="btn btn-light" target="_blank">
                                     <i class="fab fa-whatsapp me-2"></i>Enquire
@@ -809,6 +863,7 @@
 
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script src="new-features.js"></script>
 </body>
 
 </html>
