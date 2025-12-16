@@ -125,7 +125,7 @@ For each product, update:
 
 - [ ] **About Content** (Lines 153-159)
   - Update years of experience
-  - Modify business description
+  - Modify business description 
 
 ### 8. Hero Slider Text
 

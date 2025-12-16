@@ -291,7 +291,7 @@ After the website is built, you can request:
 
 - **v1.0** - Initial template based on Sri Kaliamman Textiles website
 - Includes all premium features: Lightbox, Loading Animation, Scroll Progress, Dark Mode, etc.
-
+ 
 ---
 
 ## 📄 LICENSE
