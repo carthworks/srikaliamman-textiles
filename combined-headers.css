@@ -1,0 +1,125 @@
+/* ============================================
+   COMBINED SECTION HEADERS
+   ============================================ */
+
+/* Combined headers for Get a Quote and Get in Touch */
+.enquiry-section .section-title,
+.contact-section .section-title {
+    margin-bottom: 0.5rem;
+}
+
+.enquiry-section .section-subtitle,
+.contact-section .section-subtitle {
+    margin-bottom: 0;
+}
+
+/* Add separator between the two headers */
+.enquiry-section .row.text-center .col-md-6:first-child::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background: linear-gradient(180deg, transparent, var(--primary-color), transparent);
+    opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .enquiry-section .row.text-center .col-md-6:first-child::after {
+        display: none;
+    }
+
+    .enquiry-section .row.text-center .col-md-6 {
+        margin-bottom: 2rem;
+    }
+
+    .enquiry-section .row.text-center .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Ensure proper spacing for enquiry form */
+.enquiry-form-wrapper {
+    margin-top: 0;
+}
+
+/* Animation for combined headers */
+.enquiry-section .row.text-center .col-md-6 {
+    animation: fadeInDown 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.enquiry-section .row.text-center .col-md-6:first-child {
+    animation-delay: 0.1s;
+}
+
+.enquiry-section .row.text-center .col-md-6:last-child {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Map Section Styling */
+.map-section {
+    padding-top: 0;
+    padding-bottom: var(--spacing-2xl);
+}
+
+.map-section .map-wrapper {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    height: 450px;
+}
+
+.map-section .map-wrapper iframe {
+    height: 100%;
+}
+
+/* Map in Contact Column */
+.contact-info-wrapper .map-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-info-wrapper .map-wrapper iframe {
+    display: block;
+    border-radius: var(--radius-lg);
+}
+
+/* Ensure equal heights for form and contact info */
+.enquiry-section .enquiry-form-wrapper,
+.enquiry-section .contact-info-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.enquiry-section .contact-info-wrapper {
+    justify-content: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .map-section .map-wrapper {
+        height: 350px;
+    }
+
+    .contact-info-wrapper .map-wrapper iframe {
+        height: 300px;
+    }
+}

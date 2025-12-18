@@ -1,28 +1,73 @@
 /* ============================================
-   DESIGN SYSTEM & CSS VARIABLES
+   CSS VARIABLES & ROOT STYLES - TEXTILE SHOWROOM THEME
    ============================================ */
 
 :root {
-    /* Color Palette - Premium & Modern */
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --primary-light: #60a5fa;
-    --secondary-color: #f59e0b;
-    --accent-color: #8b5cf6;
+    /* Textile Showroom Color Palette - Warm, Artistic, Elegant */
+    --primary-color: #c17a5c;
+    /* Warm Terracotta - Like natural dyed fabrics */
+    --primary-dark: #9d5d43;
+    /* Deep Clay */
+    --secondary-color: #d4a574;
+    /* Golden Sand - Like silk threads */
+    --accent-color: #8b7355;
+    /* Warm Taupe - Earthy textile tones */
+    --success-color: #7a9b76;
+    /* Sage Green - Natural dyes */
+    --danger-color: #c85a54;
+    /* Soft Rust */
+    --warning-color: #d4a574;
+    /* Warm Gold */
 
-    /* Neutral Colors */
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-light: #9ca3af;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-tertiary: #f3f4f6;
+    /* Artistic Accent Colors */
+    --fabric-cream: #f5f1e8;
+    /* Soft cream like cotton */
+    --fabric-beige: #e8dcc8;
+    /* Natural beige */
+    --fabric-gold: #d4af37;
+    /* Elegant gold thread */
+    --fabric-burgundy: #8b4049;
+    /* Rich wine like velvet */
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    --gradient-cool: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    /* Neutral Colors - Warm Tones */
+    --text-primary: #3d2f2a;
+    /* Deep brown instead of black */
+    --text-secondary: #6b5d57;
+    /* Warm gray */
+    --text-light: #9d8b82;
+    /* Light taupe */
+    --bg-primary: #fdfbf7;
+    /* Warm white (cream) */
+    --bg-secondary: #f5f1e8;
+    /* Soft cream */
+    --bg-tertiary: #ebe5d9;
+    /* Light beige */
+    --border-color: #d9cfc0;
+    /* Warm border */
+
+    /* Dark Mode Colors - Warm Dark Tones */
+    --dark-bg-primary: #2a2420;
+    /* Deep warm brown */
+    --dark-bg-secondary: #3d342e;
+    /* Rich chocolate */
+    --dark-bg-tertiary: #4d4139;
+    /* Warm charcoal */
+    --dark-text-primary: #f5f1e8;
+    /* Cream */
+    --dark-text-secondary: #d9cfc0;
+    /* Light beige */
+    --dark-border-color: #4d4139;
+    /* Warm border */
+
+    /* Gradients - Warm & Artistic */
+    --gradient-primary: linear-gradient(135deg, #c17a5c 0%, #9d5d43 100%);
+    /* Terracotta to Clay */
+    --gradient-secondary: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
+    /* Golden Sand to Warm Taupe */
+    --gradient-warm: linear-gradient(135deg, #d4a574 0%, #c17a5c 100%);
+    /* Golden Sand to Terracotta */
+    --gradient-cool: linear-gradient(135deg, #7a9b76 0%, #8b7355 100%);
+    /* Sage Green to Warm Taupe */
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -32,16 +77,14 @@
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
     /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
 
-    /* Typography - Uniform Modern Font */
+    /* Typography - Elegant & Artistic */
     --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
 
     /* Border Radius */
     --radius-sm: 0.375rem;
@@ -56,14 +99,15 @@
     --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Variables - Warm Tones */
 [data-theme="dark"] {
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
-    --text-light: #9ca3af;
-    --bg-primary: #111827;
-    --bg-secondary: #1f2937;
-    --bg-tertiary: #374151;
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --text-light: #9d8b82;
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --bg-tertiary: var(--dark-bg-tertiary);
+    --border-color: var(--dark-border-color);
 }
 
 /* ============================================
@@ -294,7 +338,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 .carousel-caption-custom {
@@ -305,19 +349,32 @@ img {
     text-align: center;
     color: white;
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
+    padding: 2rem;
+    background: rgba(139, 69, 19, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .carousel-caption-custom h1 {
     font-family: var(--font-display);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .carousel-caption-custom p {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.carousel-indicators {
+    margin-bottom: 2rem;
 }
 
 .carousel-indicators button {
@@ -392,7 +449,7 @@ img {
 }
 
 .hero-slider {
-    margin-top: 72px;
+    margin-top: -58px !important;
 }
 
 .carousel-image {
@@ -505,6 +562,12 @@ section {
     background: var(--bg-primary);
 }
 
+#about h2.section-title {
+    color: #000;
+}
+
+
+
 .feature-card {
     background: white;
     padding: var(--spacing-xl);
@@ -548,6 +611,36 @@ section {
     line-height: 1.7;
 }
 
+/* Feature card animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card {
+    animation: slideInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.feature-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
 .about-content-box {
     background: var(--gradient-primary);
     padding: var(--spacing-xl);
@@ -567,6 +660,22 @@ section {
 
 .products-section {
     background: var(--bg-secondary);
+    position: relative;
+}
+
+.products-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/bg01.png');
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .product-slider-wrapper {
@@ -791,12 +900,72 @@ section {
     line-height: 1.6;
 }
 
+/* Why card animation */
+.why-card {
+    animation: fadeInScale 0.7s ease-out;
+    animation-fill-mode: both;
+}
+
+.why-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.why-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.why-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.why-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Icon rotation on hover */
+.why-icon {
+    transition: transform var(--transition-base);
+}
+
+.why-card:hover .why-icon {
+    transform: rotate(360deg);
+}
+
 /* ============================================
    ENQUIRY SECTION
    ============================================ */
 
 .enquiry-section {
     background: var(--bg-secondary);
+    position: relative;
+}
+
+.enquiry-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/bg02.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .enquiry-form-wrapper {
@@ -891,6 +1060,36 @@ section {
 .contact-info-item:hover {
     transform: translateX(10px);
     box-shadow: var(--shadow-lg);
+}
+
+/* Contact item animation */
+.contact-info-item {
+    animation: slideInLeft 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.contact-info-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-info-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.contact-info-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .contact-icon {

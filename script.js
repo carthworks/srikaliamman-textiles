@@ -214,20 +214,11 @@ function initializeEnquiryForm() {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Get form values
-        const formData = {
-            name: document.getElementById('name').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            product: document.getElementById('product').value,
-            quantity: document.getElementById('quantity').value,
-            message: document.getElementById('message').value
-        };
+        // Clear previous error messages
+        clearFormErrors();
 
-        // Validate form
-        if (!validateForm(formData)) {
-            return;
-        }
+        // Get form values
+        const formData = new FormData(form);
 
         // Show loading state
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -235,26 +226,88 @@ function initializeEnquiryForm() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
         submitBtn.disabled = true;
 
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Hide form and show thank you message
-            form.style.display = 'none';
-            thankYouMessage.style.display = 'block';
+        // Send data to PHP script
+        fetch('send-email.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Hide form and show thank you message
+                    form.style.display = 'none';
+                    thankYouMessage.style.display = 'block';
 
-            // Reset form
-            form.reset();
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+                    // Reset form
+                    form.reset();
 
-            // Optional: Send data to server or email service
-            console.log('Form submitted:', formData);
+                    // Show success message
+                    showAlert(data.message, 'success');
 
-            // You can integrate with email services like EmailJS, FormSpree, etc.
-            // Example: sendEmail(formData);
+                    // Scroll to thank you message
+                    thankYouMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-            // Scroll to thank you message
-            thankYouMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1500);
+                    // Track successful submission
+                    trackEvent('form_submission', {
+                        product: formData.get('product'),
+                        success: true
+                    });
+                } else {
+                    // Show error message
+                    if (data.errors) {
+                        // Display field-specific errors
+                        displayFormErrors(data.errors);
+                    }
+                    showAlert(data.message || 'There was an error submitting your enquiry. Please try again.', 'error');
+
+                    // Track failed submission
+                    trackEvent('form_submission', {
+                        success: false,
+                        error: data.message
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showAlert('There was an error submitting your enquiry. Please try again later.', 'error');
+
+                // Track error
+                trackEvent('form_submission', {
+                    success: false,
+                    error: 'Network error'
+                });
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+    });
+}
+
+function clearFormErrors() {
+    // Remove all error messages
+    document.querySelectorAll('.form-error').forEach(el => el.remove());
+    document.querySelectorAll('.form-control.is-invalid').forEach(el => {
+        el.classList.remove('is-invalid');
+    });
+}
+
+function displayFormErrors(errors) {
+    Object.keys(errors).forEach(fieldName => {
+        const field = document.getElementById(fieldName);
+        if (field) {
+            // Add error class
+            field.classList.add('is-invalid');
+
+            // Create error message element
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'form-error text-danger small mt-1';
+            errorDiv.textContent = errors[fieldName];
+
+            // Insert error message after the field
+            field.parentElement.appendChild(errorDiv);
+        }
     });
 }
 
@@ -292,17 +345,19 @@ function validateForm(formData) {
 function showAlert(message, type = 'info') {
     // Create alert element
     const alert = document.createElement('div');
-    alert.className = `alert alert - ${type === 'error' ? 'danger' : 'success'} alert - dismissible fade show`;
+    alert.className = `alert alert-${type === 'error' ? 'danger' : 'success'} alert-dismissible fade show`;
     alert.style.position = 'fixed';
     alert.style.top = '100px';
     alert.style.right = '20px';
     alert.style.zIndex = '9999';
     alert.style.minWidth = '300px';
+    alert.style.maxWidth = '500px';
     alert.style.boxShadow = '0 10px 25px rgba(0,0,0,0.2)';
     alert.innerHTML = `
+        <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'} me-2"></i>
         ${message}
-<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-`;
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
 
     document.body.appendChild(alert);
 

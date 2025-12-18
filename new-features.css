@@ -21,6 +21,30 @@
     background: var(--gradient-primary);
     width: 0%;
     transition: width 0.1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer effect on scroll progress */
+.scroll-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 /* ============================================
@@ -60,6 +84,7 @@
     display: block;
     margin-bottom: var(--spacing-md);
     animation: rotate 2s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(193, 122, 92, 0.3));
 }
 
 .loader-logo h2 {
@@ -77,6 +102,7 @@
     border-radius: 50%;
     margin: 0 auto var(--spacing-md);
     animation: spin 1s linear infinite;
+    box-shadow: 0 0 20px rgba(193, 122, 92, 0.3);
 }
 
 .loader-text {
@@ -145,6 +171,21 @@
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease-out;
+}
+
+/* Subtle pattern on lightbox background */
+.lightbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/tile_01.png');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    opacity: 0.9;
+    pointer-events: none;
 }
 
 .lightbox.active {

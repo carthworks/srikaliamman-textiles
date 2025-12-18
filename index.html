@@ -14,10 +14,11 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Google Fonts - Uniform Modern Font -->
+    <!-- Google Fonts - Elegant & Artistic for Textile Showroom -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -29,6 +30,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="new-features.css">
+    <link rel="stylesheet" href="textile-showroom.css">
+    <link rel="stylesheet" href="combined-headers.css">
 </head>
 
 <body>
@@ -221,7 +224,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row my-5">
                 <div class="col-12" data-aos="fade-up">
                     <div class="about-content-box">
                         <p class="lead">
@@ -570,33 +573,49 @@
     <!-- Enquiry Form -->
     <section id="enquiry" class="enquiry-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up">
+            <!-- Combined Section Headers -->
+            <div class="row justify-content-center mb-5" data-aos="fade-up">
+                <div class="col-lg-10">
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <h2 class="section-title">Get a Quote</h2>
+                            <p class="section-subtitle">Fill out the form and we'll get back to you</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="section-title">Get in Touch</h2>
+                            <p class="section-subtitle">We're here to help with your textile needs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form and Contact Info in One Row -->
+            <div class="row g-4">
+                <!-- Left Column - Enquiry Form -->
+                <div class="col-lg-6" data-aos="fade-right">
                     <div class="enquiry-form-wrapper">
-                        <h2 class="section-title text-center mb-4">Get a Quote</h2>
-                        <p class="text-center mb-5">Fill out the form below and we'll get back to you shortly</p>
 
                         <form id="enquiryForm" class="enquiry-form">
                             <div class="row g-4">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="name">Full Name *</label>
                                         <input type="text" class="form-control" id="name" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="phone">Phone Number *</label>
                                         <input type="tel" class="form-control" id="phone" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="email">Email Address *</label>
                                         <input type="email" class="form-control" id="email" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="product">Product Interested In *</label>
                                         <select class="form-control" id="product" required>
@@ -620,7 +639,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="message">Message</label>
-                                        <textarea class="form-control" id="message" rows="4"
+                                        <textarea class="form-control" id="message" rows="3"
                                             placeholder="Tell us about your requirements..."></textarea>
                                     </div>
                                 </div>
@@ -645,155 +664,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
-                    <p class="section-subtitle">Everything you need to know about our products and services</p>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="accordion" id="faqAccordion">
-                        <!-- FAQ 1 -->
-                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq1">
-                                    <i class="fas fa-question-circle me-3"></i>
-                                    What is the minimum order quantity?
-                                </button>
-                            </h3>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Our minimum order quantity varies by product. For towels and bedsheets, the minimum
-                                    is typically 500 pieces. For custom orders, we can accommodate smaller quantities.
-                                    Please contact us for specific product MOQs.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 2 -->
-                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="200">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq2">
-                                    <i class="fas fa-question-circle me-3"></i>
-                                    Do you offer custom sizes and designs?
-                                </button>
-                            </h3>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes! We specialize in custom orders. You can specify your preferred sizes, colors,
-                                    patterns, and even add your brand logo. Our team will work with you to create
-                                    products that match your exact specifications.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 3 -->
-                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="300">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq3">
-                                    <i class="fas fa-question-circle me-3"></i>
-                                    What is the typical delivery time?
-                                </button>
-                            </h3>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    For standard products, delivery typically takes 7-14 business days within India.
-                                    Custom orders may take 3-4 weeks depending on complexity and quantity. We provide
-                                    tracking information for all shipments.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 4 -->
-                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="400">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq4">
-                                    <i class="fas fa-question-circle me-3"></i>
-                                    What payment methods do you accept?
-                                </button>
-                            </h3>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We accept bank transfers, UPI, cheques, and for established clients, we offer credit
-                                    terms. A 30-50% advance payment is typically required for new orders, with the
-                                    balance due before shipment.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 5 -->
-                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="500">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq5">
-                                    <i class="fas fa-question-circle me-3"></i>
-                                    Can I get product samples before placing a bulk order?
-                                </button>
-                            </h3>
-                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Absolutely! We encourage customers to request samples before placing bulk orders.
-                                    Sample charges are nominal and will be adjusted against your first order. Contact us
-                                    to request samples of specific products.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 6 -->
-                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="600">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq6">
-                                    <i class="fas fa-question-circle me-3"></i>
-                                    Do you ship outside India?
-                                </button>
-                            </h3>
-                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, we ship internationally. Shipping costs and delivery times vary by destination.
-                                    Please contact us with your location and order details for a customized shipping
-                                    quote.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Still have questions? -->
-                    <div class="faq-cta text-center mt-5" data-aos="fade-up">
-                        <p class="lead">Still have questions?</p>
-                        <a href="#enquiry" class="btn btn-primary btn-lg">
-                            <i class="fas fa-envelope me-2"></i>Contact Us
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
-                    <h2 class="section-title">Get in Touch</h2>
-                    <p class="section-subtitle">We're here to help with your textile needs</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
+                <!-- Right Column - Contact Information -->
+                <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-info-wrapper">
                         <div class="contact-info-item">
                             <div class="contact-icon">
@@ -825,20 +698,168 @@
                                 <p><a href="mailto:info@srikaliammantextiles.com">info@srikaliammantextiles.com</a></p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="map-wrapper">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125285.96447892!2d77.9!3d10.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85c95d3e828c5%3A0x2f7d7c3e3e3e3e3e!2sKarur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890123"
-                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+
+                        <!-- Map in Contact Column -->
+                        <div class="map-wrapper mt-1">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125285.96447892!2d77.9!3d10.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85c95d3e828c5%3A0x2f7d7c3e3e3e3e3e!2sKarur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890123"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about our products and
+                        services</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    <i class="fas fa-question-circle me-3"></i>
+                                    What is the minimum order quantity?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our minimum order quantity varies by product. For towels and
+                                    bedsheets, the minimum
+                                    is typically 500 pieces. For custom orders, we can accommodate
+                                    smaller quantities.
+                                    Please contact us for specific product MOQs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    <i class="fas fa-question-circle me-3"></i>
+                                    Do you offer custom sizes and designs?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! We specialize in custom orders. You can specify your
+                                    preferred sizes, colors,
+                                    patterns, and even add your brand logo. Our team will work with
+                                    you to create
+                                    products that match your exact specifications.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    <i class="fas fa-question-circle me-3"></i>
+                                    What is the typical delivery time?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    For standard products, delivery typically takes 7-14 business
+                                    days within India.
+                                    Custom orders may take 3-4 weeks depending on complexity and
+                                    quantity. We provide
+                                    tracking information for all shipments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    <i class="fas fa-question-circle me-3"></i>
+                                    What payment methods do you accept?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We accept bank transfers, UPI, cheques, and for established
+                                    clients, we offer credit
+                                    terms. A 30-50% advance payment is typically required for new
+                                    orders, with the
+                                    balance due before shipment.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq5">
+                                    <i class="fas fa-question-circle me-3"></i>
+                                    Can I get product samples before placing a bulk order?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We encourage customers to request samples before
+                                    placing bulk orders.
+                                    Sample charges are nominal and will be adjusted against your
+                                    first order. Contact us
+                                    to request samples of specific products.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="accordion-item faq-item" data-aos="fade-up" data-aos-delay="600">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq6">
+                                    <i class="fas fa-question-circle me-3"></i>
+                                    Do you ship outside India?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we ship internationally. Shipping costs and delivery times
+                                    vary by destination.
+                                    Please contact us with your location and order details for a
+                                    customized shipping
+                                    quote.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Still have questions? -->
+                    <div class="faq-cta text-center mt-5" data-aos="fade-up">
+                        <p class="lead">Still have questions?</p>
+                        <a href="#enquiry" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
